@@ -1,0 +1,47 @@
+---
+title: "Readme"
+author: "AT"
+date: "10 septembre 2020"
+output: html_document
+---
+# Cleaning Data Final project
+
+##Objective
+The purpose of this project is to demonstrate your ability to collect, work with, and clean a data set.
+
+## Summary
+This file is intended to review the main process for the creation of the "tidy-data.txt" data tidyset.
+
+##Contents
+This repository contains the followinf documents:
+
+* Readme.rmd
+* run_analysis.R
+* codebook.Rmd
+* tidy-data.txt
+
+##Data
+The raw data comes from the International Workshop of Ambient Assisted Living, download it from: (https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip). The folder obtained is: UCI HAR Dataset. 
+This data is automatic download it with the script run_analysis.R. All copyrights are described on the codebook.rmd file.
+
+##Descrption of each file
+
+* Readme.rmd: Overview of the process for the creation of the "tidy-data.txt" data tidyset  
+
+* run_analysis.R: The R script obtains and tidy the raw data as follows:
+0.1 Read libraries
+0.2 Check if data set is already downloaded and download it, if necessary.
+0.3 Obtaining all the txt files
+0.4 Remove unnecesary files from the list
+0.5 Reads the txt files as data frames
+0.6 Binding test, training & ID data
+0.7 Labeling test, training & ID data
+1.0 Merges the training and the test sets to create one data set.
+2.0 Extracts only the measurements on the mean and standard deviation for each measurement
+3.0 Uses descriptive activity names to name the activities in the data 4.0 Labels the data set with descriptive variable names
+5.0 From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject called "tidy-data.txt"
+
+* codebook.Rmd:contains the variables and the transformations to clean the information and obtain a tidy set data as required for the final project course cleaning data from coursera
+
+#Outcome
+A tidyfile "tidy-data.txt" with 180 rows and 68 columns.
