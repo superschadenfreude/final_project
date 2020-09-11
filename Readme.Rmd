@@ -28,20 +28,31 @@ This data is automatic download it with the script run_analysis.R. All copyright
 
 * Readme.rmd: Overview of the process for the creation of the "tidy-data.txt" data tidyset  
 
-* run_analysis.R: The R script obtains and tidy the raw data as follows:
-0.1 Read libraries
-0.2 Check if data set is already downloaded and download it, if necessary.
-0.3 Obtaining all the txt files
-0.4 Remove unnecesary files from the list
-0.5 Reads the txt files as data frames
-0.6 Binding test, training & ID data
-0.7 Labeling test, training & ID data
-1.0 Merges the training and the test sets to create one data set.
-2.0 Extracts only the measurements on the mean and standard deviation for each measurement
-3.0 Uses descriptive activity names to name the activities in the data 4.0 Labels the data set with descriptive variable names
-5.0 From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject called "tidy-data.txt"
+* Codebook.Rmd:contains the variables and the transformations to clean the information and obtain a tidy set data as required for the final project course cleaning data from coursera  
 
-* codebook.Rmd:contains the variables and the transformations to clean the information and obtain a tidy set data as required for the final project course cleaning data from coursera
+* tidy-data.txt: Final tidy set created with the script run_analysis.R.  
+
+* run_analysis.R: The R script obtains and tidy the raw data as follows:
+
+0.05 Check if all libraries are installed  
+**NOTE**: I have to include this step because some people don't have the all the libraries installed and can't run the script.  
+0.1 Read libraries  
+Check all the libraries are set to run the script  
+0.2 Check if data set is already downloaded and download it, if necessary.  This step avoid unncesary memory (and time) wasted downloading the file.  
+0.3 Obtaining all the txt files  
+0.4 Remove unnecesary files from the list  
+This step uses grep to assing the names to the tables  
+0.5 Reads the txt files as data frames  
+0.6 Binding test, training & ID data  
+0.7 Labeling test, training & ID data  
+1.0 Merges the training and the test sets to create one data set.  
+Adds "Activity" and "IDsubject" to clarify the first two columns  
+2.0 Extracts only the measurements on the mean and standard deviation for each measurement  
+3.0 Uses descriptive activity names to name the activities in the data 4.0  
+Labels the data set with descriptive variable names as requested for the final assesment  
+5.0 From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject called "tidy-data.txt"  
+
+
 
 #Outcome
 A tidyfile "tidy-data.txt" with 180 rows and 68 columns.

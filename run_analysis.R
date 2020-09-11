@@ -1,5 +1,10 @@
 ## Final Project Coursera SEP 20
 ## 0 - Cleaning (tyding) data
+## 0.05 Check if all libraries are installed
+x <- c("zip", "data.table", "plyr" )
+new<- x[!(x %in% installed.packages()[,"Package"])]
+if(length(new)) install.packages(new)
+rm(x,new)
 ## 0.1 Read libraries
 library(data.table)
 library(zip)
@@ -7,12 +12,12 @@ library(plyr)
 ## 0.2 Check if data set is already downloaded and download it, if necessary.
 
 if (dir.exists("UCI HAR Dataset")){print("Already exists")
-      } else {
-        file1 <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
-        print("error")
-        ##download.file(file1, destfile = "x.zip", method = "curl")
-        unzip("x.zip") 
-        }
+} else {
+      file1 <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
+      print("error")
+      ##download.file(file1, destfile = "x.zip", method = "curl")
+      unzip("x.zip") 
+}
 ## 0.3 Obtaining all the txt files 
 list1 <- list.files(pattern = "*.txt" , recursive = TRUE)
 x <- grep("X_|/y_test|/y_train|subject|features?|_labels" ,list1)
